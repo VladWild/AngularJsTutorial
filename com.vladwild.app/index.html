@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<!-- ng-app - изпользуется для автозагрузки приложения (может принимать значение модели) -->
 <html lang="en" ng-app>
 <head>
     <meta charset="UTF-8">
     <title>Phone Gallery</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+
+    <script>
+        //1) самый простойконтроллер в виде функции
+        var DemoCtrl = function($scope){
+            $scope.name = 'world';
+        }
+    </script>
+
 </head>
-<body>
-    <!-- ng-init - выполняет код инициализации перед начальным построением шаблона (загоняем в нее значения по умелчанию) -->
-    <div ng-init="name = 'World!'">
-        <p>Hello {{name}}</p>
-        <!-- ng-bind - сообщает AngularJS о необходимости заменить текстовое содержимое указанного HTML-элемента -->
-        <!-- значением данного выражения и обновить текстовое содержимое при изменении значения этого выражения -->
-        <p>Hello <span ng-bind="name">Этого текста не будет видно с директивой ng-bind</span></p>
+<body ng-init="name = 'Vladislav'">
+    <!--1) самый простойконтроллер в виде функции c $scope -->
+    <!--тут переменная переопредилилась-->
+    <div ng-controller="DemoCtrl">
+        Hello {{name}}!
     </div>
+    <div>My name is {{name}}</div>
 </body>
 </html>
