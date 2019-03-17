@@ -28,5 +28,24 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
     //фильтр по строке и статусу
     $scope.searchAndStatus = function (phoneItem) {
         return phoneItem.name.indexOf($scope.searchPhone) > -1 && phoneItem.status;
+    };
+
+    //-- сортировка
+
+    var titleSort = ['Sort Descending', 'Sort Ascending']
+    $scope.titleSort = titleSort[1];
+
+    $scope.sortField = undefined;
+    $scope.reverse = false;
+
+    $scope.sort = function (fieldName) {
+        if ($scope.sortField === fieldName) {
+            $scope.reverse = !$scope.reverse;
+            $scope.titleSort = $scope.titleSort === titleSort[0] ? titleSort[1] : titleSort[0];
+        } else {
+            //случай, когда только зашли на страничку
+            $scope.sortField = fieldName;
+            $scope.reverse = false;
+        }
     }
 });

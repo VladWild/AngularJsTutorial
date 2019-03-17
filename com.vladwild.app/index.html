@@ -33,5 +33,20 @@
         <li>6. Json: <pre>{{ {'name': 'Vlad', 'subname': 'Wild'} | json}}</pre></li>
     </ul>
 
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th><a href="" ng-click="sort('name')">{{titleSort}}</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="phone in phones | orderBy:sortField:reverse">
+                <td>{{phone.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>
