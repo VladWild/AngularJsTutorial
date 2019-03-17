@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<!--тут обязательно надо указать имя модуля-->
+<html lang="en" ng-app="phonecatApp">
 <head>
     <meta charset="UTF-8">
     <title>Phone Gallery</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
 
     <script>
-        //1) самый простойконтроллер в виде функции
-        var DemoCtrl = function($scope){
-            $scope.name = 'world';
-        }
+        var phonecatApp = angular.module('phonecatApp', []);
+
+        phonecatApp.controller('DemoCtrl', function ($scope) {
+            $scope.name = 'World';
+        });
     </script>
 
 </head>
-<body ng-init="name = 'Vladislav'">
-    <!--1) самый простойконтроллер в виде функции c $scope -->
-    <!--тут переменная переопредилилась-->
     <div ng-controller="DemoCtrl">
         Hello {{name}}!
     </div>
-    <div>My name is {{name}}</div>
 </body>
 </html>
