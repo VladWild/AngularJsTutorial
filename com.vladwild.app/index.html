@@ -6,9 +6,20 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
     <script src="controllers.js"></script>
 </head>
-<body>
-    <div ng-controller="DemoCtrl">
-        Hello {{name}}!
-    </div>
+<body ng-controller="PhoneListCtrl">
+    <h2>Список</h2>
+    <ul>
+        <li ng-repeat="phone in phones">
+            <span>{{phone.name}}</span>
+            <p>{{phone.snippet}}</p>
+            <br>
+        </li>
+    </ul>
+    <h2>Табличка</h2>
+    <table border="10">
+        <tr ng-repeat="phone in phones">
+            <th>{{phone.name}}</th>
+            <td>{{phone.snippet}}</td>
+    </table>
 </body>
 </html>
