@@ -12,13 +12,13 @@
         Search: <input type="text" ng-model="searchPhone">
     </p>
     <ul>
-        <!--$ - любой элемент и name, и snippet-->
-        <li ng-repeat="phone in phones | filter:{$:searchPhone}">
+        <li ng-repeat="phone in countFilterPhone = (phones | filter:searchAndStatus)">
             <span>{{phone.name}}</span>
             <p>{{phone.snippet}}</p>
             <br>
         </li>
     </ul>
+    <p>Количество найденых телефонов: {{countFilterPhone.length}}</p>
     <p>Общее количество телефонов: {{phones.length}}</p>
 
     <hr>

@@ -24,4 +24,9 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
     ];
 
     $scope.today = new Date();
+
+    //фильтр по строке и статусу
+    $scope.searchAndStatus = function (phoneItem) {
+        return phoneItem.name.indexOf($scope.searchPhone) > -1 && phoneItem.status;
+    }
 });
