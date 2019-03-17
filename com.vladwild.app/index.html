@@ -1,20 +1,12 @@
 <!DOCTYPE html>
-<!--тут обязательно надо указать имя модуля-->
 <html lang="en" ng-app="phonecatApp">
 <head>
     <meta charset="UTF-8">
     <title>Phone Gallery</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
-
-    <script>
-        var phonecatApp = angular.module('phonecatApp', []);
-
-        phonecatApp.controller('DemoCtrl', function ($scope) {
-            $scope.name = 'World';
-        });
-    </script>
-
+    <script src="controllers.js"></script>
 </head>
+<body>
     <div ng-controller="DemoCtrl">
         Hello {{name}}!
     </div>
